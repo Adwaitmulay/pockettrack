@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PocketTrack</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- header -->
+    <div class="header">
+      <h1>PocketTrack 💰</h1>
+      <p>Track your daily expenses</p>
+    </div>
+
+    <!-- balance box -->
+    <div class="balance-box">
+      <p>Total Spent</p>
+      <h2 id="total">₹0</h2>
+    </div>
+
+    <!-- add expense form -->
+    <div class="form-box">
+      <h3>Add Expense</h3>
+
+      <input type="text" id="expName" placeholder="Expense name (eg: Lunch)" />
+
+      <input type="number" id="expAmount" placeholder="Amount in ₹" />
+
+      <select id="expCategory">
+        <option value="">-- Select Category --</option>
+        <option value="Food">🍔 Food</option>
+        <option value="Travel">🚌 Travel</option>
+        <option value="Shopping">🛍️ Shopping</option>
+        <option value="Other">📦 Other</option>
+      </select>
+
+      <button onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <!-- error message -->
+    <p id="errorMsg" class="error"></p>
+
+    <!-- filter -->
+    <div class="filter-box">
+      <label>Filter by category:</label>
+      <select id="filterCategory" onchange="filterExpenses()">
+        <option value="All">All</option>
+        <option value="Food">🍔 Food</option>
+        <option value="Travel">🚌 Travel</option>
+        <option value="Shopping">🛍️ Shopping</option>
+        <option value="Other">📦 Other</option>
+      </select>
+    </div>
+
+    <!-- expense list -->
+    <div class="list-box">
+      <h3>Your Expenses</h3>
+      <ul id="expenseList">
+        <li class="empty-msg">No expenses added yet.</li>
+      </ul>
+    </div>
+
+    <!-- reset button -->
+    <button class="reset-btn" onclick="resetAll()">Reset All</button>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
